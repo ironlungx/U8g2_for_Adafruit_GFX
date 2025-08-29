@@ -46,7 +46,7 @@
 
 
 
-struct _u8g2_font_info_t
+struct _u8g2_font_info_t_GFX
 {
   /* offset 0 */
   uint8_t glyph_cnt;
@@ -80,9 +80,9 @@ struct _u8g2_font_info_t
   /* offset 21 */
   uint16_t start_pos_unicode;
 };
-typedef struct _u8g2_font_info_t u8g2_font_info_t;
+typedef struct _u8g2_font_info_t_GFX u8g2_font_info_t_GFX;
 
-struct _u8g2_font_decode_t
+struct _u8g2_font_decode_t_GFX
 {
   const uint8_t *decode_ptr;      /* pointer to the compressed data */
   
@@ -100,7 +100,7 @@ struct _u8g2_font_decode_t
   uint8_t is_transparent;
   uint8_t dir;        /* direction */
 };
-typedef struct _u8g2_font_decode_t u8g2_font_decode_t;
+typedef struct _u8g2_font_decode_t_GFX u8g2_font_decode_t_GFX;
 
 
 struct _u8g2_font_t
@@ -111,8 +111,8 @@ struct _u8g2_font_t
   const uint8_t *font;             /* current font for all text procedures */
   
   //u8g2_font_calc_vref_fnptr font_calc_vref;
-  u8g2_font_decode_t font_decode;   /* new font decode structure */
-  u8g2_font_info_t font_info;     /* new font info structure */
+  u8g2_font_decode_t_GFX font_decode;   /* new font decode structure */
+  u8g2_font_info_t_GFX font_info;     /* new font info structure */
 
   //uint8_t font_height_mode;
   //int8_t font_ref_ascent;
